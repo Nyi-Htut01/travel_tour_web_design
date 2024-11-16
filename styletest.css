@@ -1,0 +1,647 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap');
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Color Variables */
+:root {
+    --main-color: #3adad5;
+    --text-color: #ffffff;
+    --bg-color: #2b2b2b;
+    --overlay-color: rgba(0, 0, 0, 0.6);
+    --accent-color: #ff7492;
+    --hover-color: #f93573; /* Gold hover color */
+}
+
+/* Body Styling */
+body {
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+/* Transparent Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background: transparent;
+    transition: background 0.3s ease, padding 0.3s ease;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 15px 40px;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar li {
+    list-style: none;
+}
+
+/* Enhanced Navbar Hover Effect */
+.navbar li a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar li a:hover {
+    color: var(--hover-color); /* Text color changes on hover */
+}
+
+.navbar li a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--hover-color);
+    transition: all 0.3s ease;
+}
+
+.navbar li a:hover::before {
+    left: 0;
+    width: 100%;
+}
+
+/* Search and User Icon */
+.search_container {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 5px 10px;
+}
+
+.search_container input {
+    border: none;
+    background: transparent;
+    color: #ffffff;
+    padding: 5px;
+}
+
+.search_container .submit {
+    font-size: 18px;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+header i{
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+header i:hover{
+    color: var(--accent-color);
+}
+
+
+/* Homepage Section with Black Overlay */
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 80px;
+    background: url('img/pexels-jaime-reimer-1376930-2662116.jpg') no-repeat center center/cover;
+    position: relative;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.homepage::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay */
+    z-index: 0;
+}
+
+.textsection {
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.textsection h1 {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.textsection p {
+    color: #ddd;
+    font-size: 1.1em;
+}
+
+/* Side Navigation Numbers */
+.sidenum {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.sidenum ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidenum li {
+    font-size: 1.2em;
+    color: #ffffff;
+    opacity: 0.5;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.sidenum li.active,
+.sidenum li:hover {
+    opacity: 1;
+    font-weight: bold;
+}
+
+/* About Us Section */
+.about-us {
+    background: url('img/pexels-pixabay-147411.jpg') no-repeat center center/cover;
+    position: relative;
+    padding: 80px 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.about-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay for About Us section */
+    z-index: 0;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.about-content h2 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.about-content h3 {
+    font-size: 1.8em;
+    color: var(--main-color);
+    margin-top: 20px;
+}
+
+.about-content p {
+    color: #ddd;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Service Section Styling */
+.services {
+    padding: 80px 20px;
+    position: relative;
+    text-align: center;
+    background-image: url('img/pexels-jaime-reimer-1376930-2662116.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Black overlay for Service section */
+    z-index: 0;
+}
+
+.services h2 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Service Cards Grid */
+.service-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+/* Individual Service Card Styling */
+.service-card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+.service-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay Styling */
+.service-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    text-align: center;
+}
+
+.service-card:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--hover-color); /* Text color on hover */
+}
+
+.overlay p {
+    font-size: 1em;
+    color: #ddd;
+    line-height: 1.4;
+}
+
+/* Contact Us Section Styling */
+.contact-us {
+    padding: 80px 20px;
+    text-align: center;
+    background-image: url('img/pexels-quang-nguyen-vinh-222549-2166711.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.contact-us::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Black overlay for readability */
+    z-index: 0;
+}
+
+.contact-us h2 {
+    font-size: 2.5em;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-us p {
+    font-size: 1.1em;
+    color: #ddd;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 1em;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #ccc;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    padding: 15px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--hover-color);
+}
+
+/* Footer Section Styling */
+.footer {
+    background-color: #222;
+    color: #ddd;
+    padding: 40px 20px 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-logo .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-logo img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Social Media Icons Styling */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: #ddd;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--accent-color);
+}
+
+/* Footer Bottom Text */
+.footer-bottom {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+.footer-bottom p {
+    font-size: 0.9em;
+    color: #888;
+    margin: 0;
+}
+
+/* Media query for screens 768px and smaller (tablet and mobile view) */
+@media (max-width: 768px) {
+    /* Navbar adjustments */
+    .navbar {
+        display: none; /* Hide the navbar links by default */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 200px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    /* Show the navbar when the "active" class is added */
+    .navbar.active {
+        display: flex;
+    }
+ 
+
+    /* Adjust logo and search container in the header */
+    header .logo {
+        font-size: 18px;
+    }
+
+    .search_container {
+        display: none; /* Hide search container on small screens */
+    }
+
+    /* Section padding and font adjustments */
+    .homepage,
+    .about-us,
+    .services,
+    .contact-us {
+        padding: 60px 20px;
+    }
+
+    .homepage .textsection h1 {
+        font-size: 2.2em;
+    }
+
+    .homepage .textsection p {
+        font-size: 1em;
+    }
+
+    .about-content h2,
+    .services h2,
+    .contact-us h2 {
+        font-size: 2em;
+    }
+
+    /* Service Cards Grid for Mobile */
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 90%; /* Full width on smaller screens */
+        margin-bottom: 20px;
+    }
+
+    /* Contact Form Adjustments */
+    .contact-form {
+        width: 100%;
+    }
+
+    /* Footer adjustments */
+    .footer-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-social {
+        gap: 10px;
+    }
+}
+
+/* Media query for screens 480px and smaller (small mobile view) */
+@media (max-width: 480px) {
+    header .logo img {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* Homepage and About Us Text Adjustments */
+    .homepage .textsection h1 {
+        font-size: 1.8em;
+    }
+
+    .homepage .textsection p,
+    .about-content p {
+        font-size: 0.9em;
+    }
+
+    .about-content h2,
+    .services h2,
+    .contact-us h2 {
+        font-size: 1.8em;
+    }
+
+    /* Footer Text Adjustments */
+    .footer-bottom p {
+        font-size: 0.8em;
+    }
+}

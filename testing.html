@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel Website - Mountains</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styletest.css" />
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <header>
+      <a href="#homepage" class="logo"
+        ><img
+          src="img/Beige Teal Brown Mountains Adventure Logo (1).png"
+          alt="Logo"
+        />
+        Mountains</a
+      >
+      
+      <ul class="navbar">
+        <li><a href="#homepage">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Service</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="search_container">
+        <input type="text" placeholder="Search..." name="search" />
+        <button class="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+      <a href="#login" class="user"><i class="fa-solid fa-user"></i></a>
+    </header>
+
+    <!-- Homepage Section -->
+    <section class="homepage" id="homepage">
+      <div class="textsection">
+        <h1>Welcome from Mountains</h1>
+        <p>
+          Experience the untouched beauty of majestic peaks, serene valleys, and
+          a place where your spirit can wander freely. Join us as we explore,
+          protect, and connect with the wonders of the natural world.
+        </p>
+      </div>
+      <div class="sidenum">
+        <ul>
+          <li>01</li>
+          <li>02</li>
+          <li class="active">03</li>
+          <li>04</li>
+          <li>05</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us" id="about">
+      <div class="about-content">
+        <h2>About Us</h2>
+        <p><strong>Your Gateway to Nature’s Wonders</strong></p>
+        <p>
+          At <em>Mountains</em>, our mission is to help you explore the profound
+          beauty of nature through curated journeys and immersive experiences.
+          Founded by adventurers with a passion for the wild, we aim to inspire
+          respect for these landscapes and a deep connection with the Earth.
+        </p>
+
+        <h3>Our Story</h3>
+        <p>
+          What started as a small group of nature enthusiasts has blossomed into
+          a dedicated team of guides, conservationists, and explorers. Driven by
+          a love for the outdoors, <em>Mountains</em> was created to bridge the
+          gap between people and nature, making the majestic mountain landscapes
+          accessible while promoting sustainable practices.
+        </p>
+
+        <h3>Our Promise</h3>
+        <p>
+          We are committed to eco-friendly tourism that supports local
+          communities and preserves the natural environment. Our team strives to
+          provide unforgettable journeys that are both awe-inspiring and
+          respectful of the wilderness we cherish.
+        </p>
+
+        <h3>Join Us</h3>
+        <p>
+          Whether you’re seeking adventure or a peaceful retreat,
+          <em>Mountains</em> offers the ideal path to reconnect with nature. Let
+          us guide you through experiences that will leave you refreshed,
+          inspired, and closer to the wonders of our world.
+        </p>
+      </div>
+    </section>
+    <!-- Service Section -->
+    <section class="services" id="services">
+      <h2>Our Services</h2>
+      <div class="service-cards">
+        <!-- Service Card 1 -->
+        <div class="service-card">
+          <img src="img/pexels-pixabay-147411.jpg" alt="Service 1" />
+          <div class="overlay">
+            <h3>Mountain Expeditions</h3>
+            <p>Experience thrilling mountain expeditions with expert guides.</p>
+          </div>
+        </div>
+
+        <!-- Service Card 2 -->
+        <div class="service-card">
+          <img
+            src="img/pexels-quang-nguyen-vinh-222549-2166711.jpg"
+            alt="Service 2"
+          />
+          <div class="overlay">
+            <h3>Guided Nature Tours</h3>
+            <p>Discover the beauty of nature with immersive guided tours.</p>
+          </div>
+        </div>
+
+        <!-- Service Card 3 -->
+        <div class="service-card">
+          <img
+            src="img/pexels-jaime-reimer-1376930-2662116.jpg"
+            alt="Service 3"
+          />
+          <div class="overlay">
+            <h3>Eco-Friendly Camping</h3>
+            <p>
+              Enjoy sustainable camping experiences in pristine environments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JavaScript for Navbar Scroll Effect -->
+    <script>
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        header.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+
+    <!-- Contact Us Section -->
+    <section class="contact-us" id="contact">
+      <h2>Contact Us</h2>
+      <p>
+        We’d love to hear from you! Please fill out the form below, and we’ll
+        get back to you as soon as possible.
+      </p>
+      <div class="contact-form">
+        <form action="#" method="post">
+          <div class="form-group">
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input type="text" name="subject" placeholder="Subject" required />
+          </div>
+          <div class="form-group">
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="#homepage" class="logo"
+            ><img src="img/Beige Teal Brown Mountains Adventure Logo (1).png" alt="Logo" /> Mountains</a
+          >
+        </div>
+
+        <div class="footer-links">
+          <ul>
+            <li><a href="#homepage">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-social">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Mountains. All rights reserved.</p>
+      </div>
+    </footer>
+
+    
+    
+  </body>
+</html>
